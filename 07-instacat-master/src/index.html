@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Задача «Котограм»</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<main class="main">
+    <div class="content">
+        <input type="checkbox" name="image-fit" id="image-fit" class="button image-fit" checked>
+        <input type="checkbox" name="logo" id="logo" class="button logo">
+        <input type="checkbox" name="flip" id="flip" class="button flip">
+
+        <input type="radio" name="scale" id="scale-100" class="button scale-100" checked>
+        <input type="radio" name="scale" id="scale-120" class="button scale-120">
+        <input type="radio" name="scale" id="scale-140" class="button scale-140">
+        <input type="radio" name="scale" id="scale-160" class="button scale-160">
+        <input type="radio" name="scale" id="scale-180" class="button scale-180">
+        <input type="radio" name="scale" id="scale-200" class="button scale_200">
+
+        <input type="radio" name="rotate" id="rotate-0" class="button rotate-0" checked>
+        <input type="radio" name="rotate" id="rotate-90" class="button rotate-90">
+        <input type="radio" name="rotate" id="rotate-180" class="button rotate-180">
+        <input type="radio" name="rotate" id="rotate-270" class="button rotate-270">
+
+        <input type="radio" name="filter" id="filter_clear-image" class="button filter_clear-image" checked>
+        <input type="radio" name="filter" id="filter_peter" class="button filter_peter">
+        <input type="radio" name="filter" id="filter_yalta" class="button filter_yalta">
+        <input type="radio" name="filter" id="filter_ural-summer" class="button filter_ural">
+        <input type="radio" name="filter" id="filter_egypt" class="button filter_egypt">
+        <input type="radio" name="filter" id="filter_nightmare" class="button filter_nightmare">
+
+        <input type="radio" name="shift" id="shift-0" class="button shift-0" checked>
+        <input type="radio" name="shift" id="shift-1" class="button shift-1">
+        <input type="radio" name="shift" id="shift-2" class="button shift-2">
+
+        <div class="buttons">
+            <label for="image-fit" class="icon fill"></label>
+            <div class="scale-button icon-wrapper">
+                <label for="scale-100" class="icon scale scale-100"></label>
+                <label for="scale-120" class="icon scale scale-120"></label>
+                <label for="scale-140" class="icon scale scale-140"></label>
+                <label for="scale-160" class="icon scale scale-160"></label>
+                <label for="scale-180" class="icon scale scale-180"></label>
+                <label for="scale-200" class="icon scale scale-200"></label>
+            </div>
+            <label for="logo" class="icon logo"></label>
+            <div class="rotate-button icon-wrapper">
+                <label for="rotate-0" class="icon rotate rotate-0"></label>
+                <label for="rotate-90" class="icon rotate rotate-90"></label>
+                <label for="rotate-180" class="icon rotate rotate-180"></label>
+                <label for="rotate-270" class="icon rotate rotate-270"></label>
+            </div>
+            <label for="flip" class="icon flip"></label>
+        </div>
+        <div class="cat-image-wrapper">
+            <div class="image-rotate">
+                <div class="image-flip">
+                    <div class="image-scale">
+                        <img class="cat-image" src="cat.png" alt="cat">
+                    </div>
+                </div>
+            </div>
+            <img class="original-image" src="cat.png" alt="original-cat">
+        </div>
+        <div class="arrows-states">
+            <div class="arrows arrows_first-state">
+                <label for="shift-0" class="icon left-arrow"></label>
+                <label for="shift-1" class="icon right-arrow"></label>
+            </div>
+            <div class="arrows arrows_second-state">
+                <label for="shift-0" class="icon left-arrow"></label>
+                <label for="shift-2" class="icon right-arrow"></label>
+            </div>
+            <div class="arrows arrows_third-state">
+                <label for="shift-1" class="icon left-arrow"></label>
+                <label for="shift-2" class="icon right-arrow"></label>
+            </div>
+        </div>
+        <div class="filters">
+            <div class="filters_wrapper">
+                <div class="filter">
+                    <label for="filter_clear-image" class="filter_name clear-image">Без фильтра</label>
+                    <label for="filter_clear-image" class="filter_image clear-image"></label>
+                </div>
+                <div class="filter">
+                    <label for="filter_peter" class="filter_name peter">Питер</label>
+                    <label for="filter_peter" class="filter_image peter"></label>
+                </div>
+                <div class="filter">
+                    <label for="filter_yalta" class="filter_name yalta">Ялта</label>
+                    <label for="filter_yalta" class="filter_image yalta"></label>
+                </div>
+                <div class="filter">
+                    <label for="filter_ural-summer" class="filter_name ural">Уральское лето</label>
+                    <label for="filter_ural-summer" class="filter_image ural"></label>
+                </div>
+                <div class="filter">
+                    <label for="filter_egypt" class="filter_name egypt">Египет</label>
+                    <label for="filter_egypt" class="filter_image egypt"></label>
+                </div>
+                <div class="filter">
+                    <label for="filter_nightmare" class="filter_name nightmare">Кошмар</label>
+                    <label for="filter_nightmare" class="filter_image nightmare"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

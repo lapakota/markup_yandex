@@ -1,0 +1,161 @@
+@font-face {
+  font-family: 'PT SansNarrow';
+  src: url(../resources/PT_Sans-Narrow-Web-Regular.ttf);
+}
+
+html,
+body {
+  overflow-x: hidden;
+
+  width: 100%;
+  height: 100%;
+  margin: 0;
+
+  font-family: 'PT SansNarrow', serif;
+}
+
+.header {
+  position: fixed;
+  z-index: 2;
+
+  display: flex;
+
+  width: 100%;
+  min-width: 270px;
+  height: 55px;
+
+  background: #333333;
+}
+
+.site-name {
+  margin: auto;
+
+  color: #fff;
+
+  font-family: 'PT SansNarrow', serif;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.content {
+  min-width: 250px;
+  max-width: 350px;
+  height: 90%;
+  min-height: 320px;
+  margin: auto;
+  padding: 65px 10px 0 10px;
+
+  border-radius: 8px;
+}
+
+.cards-container {
+  position: relative;
+
+  display: flex;
+
+  height: 65%;
+  max-height: 500px;
+}
+
+.card {
+  position: absolute;
+
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  width: 100%;
+  height: 100%;
+
+  transition: all 0.4s;
+}
+
+.pig-img {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+
+  border-radius: 8px;
+
+  background: #fff;
+
+  object-fit: cover;
+}
+
+.card-info {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+}
+
+.name,
+.age {
+  margin: 0;
+
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.name {
+  font-size: 32px;
+}
+
+.age {
+  font-size: 22px;
+}
+
+.name:after {
+  content: ',';
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+
+  height: 100px;
+
+  margin: auto;
+}
+
+.button {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+
+  width: 60px;
+  height: 60px;
+
+  margin: auto 0;
+
+  border: none;
+  border-radius: 75px;
+
+  background: #fff;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+
+  cursor: pointer;
+}
+
+.button-img {
+  width: 40px;
+}
+
+.button:active {
+  transition: all 0.2s ease;
+  transform: scale(1.1);
+}
+
+@media screen and (min-width: 1200px) {
+  .card:hover {
+    border-radius: 8px;
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .button:hover {
+    transition: all 0.2s ease;
+    transform: scale(1.1);
+  }
+}

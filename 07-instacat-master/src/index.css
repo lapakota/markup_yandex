@@ -1,0 +1,307 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+.main {
+    width: 695px;
+    margin: auto;
+}
+
+.buttons {
+    margin: 20px auto 20px;
+    width: 632px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background: url(sprite.svg) no-repeat;
+    cursor: pointer;
+}
+
+.fill {
+    background-position-x: -49px;
+}
+
+.logo {
+    background-position-x: -147px;
+}
+
+.flip {
+    height: 37px;
+    margin-top: 6px;
+    background-position-x: -98px;
+}
+
+.rotate {
+    background-position-x: -196px;
+}
+
+.scale {
+    background-position-x: -245px;
+}
+
+.left-arrow,
+.right-arrow {
+    position: absolute;
+    top: 80px;
+}
+
+.left-arrow {
+    left: -60px;
+    transform: rotate(90deg);
+}
+
+.right-arrow {
+    right: -60px;
+    transform: rotate(-90deg);
+}
+
+.rotate-button,
+.scale-button {
+    width: 48px;
+    height: 48px;
+}
+
+.rotate-0,
+.rotate-90,
+.rotate-180,
+.rotate-270,
+.scale-100,
+.scale-120,
+.scale-140,
+.scale-160,
+.scale-180 {
+    position: absolute;
+}
+
+.cat-image-wrapper {
+    position: relative;
+    margin: 12px auto 30px;
+    width: 632px;
+    height: 632px;
+    overflow: hidden;
+}
+
+.image-rotate,
+.image-flip,
+.image-scale {
+    width: 100%;
+    height: 100%;
+    transition: 0.3s ease-in;
+}
+
+.image-scale {
+    overflow: hidden;
+}
+
+.cat-image {
+    position: absolute;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    transition: 0.6s ease-in-out;
+}
+
+.filters {
+    position: relative;
+    overflow: hidden;
+}
+
+.filters_wrapper {
+    width: calc(6 * 175px);
+    display: flex;
+    justify-content: space-between;
+    transition: 0.3s ease-in-out;
+}
+
+.filter_image,
+.filter_name {
+    width: 170px;
+    display: inline-block;
+}
+
+.filter_name {
+    font-family: Helvetica, serif;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.filter_image {
+    height: 170px;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url(cat-min.png);
+    cursor: pointer;
+}
+
+.filter_image.peter {
+    filter: grayscale(20);
+}
+
+.filter_image.yalta {
+    filter: sepia(50);
+}
+
+.filter_image.ural {
+    filter: hue-rotate(160deg);
+}
+
+.filter_image.egypt {
+    filter: saturate(300%);
+}
+
+.filter_image.nightmare {
+    filter: invert(1) sepia(50) hue-rotate(-35deg);
+}
+
+.arrows-states {
+    position: relative;
+}
+
+.arrows {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.arrows:first-of-type .left-arrow,
+.arrows:last-of-type .right-arrow {
+    filter: brightness(180%);
+    cursor: default;
+}
+
+.buttons {
+    margin-bottom: 0;
+}
+
+.button {
+    display: none;
+}
+
+.image-fit:checked ~ .cat-image-wrapper .cat-image {
+    object-fit: cover;
+}
+
+.image-fit:not(:checked) ~ .cat-image-wrapper .cat-image {
+    object-fit: contain;
+}
+
+.scale-100:checked ~ .buttons .scale-120,
+.scale-120:checked ~ .buttons .scale-140,
+.scale-140:checked ~ .buttons .scale-160,
+.scale-160:checked ~ .buttons .scale-180,
+.scale-180:checked ~ .buttons .scale-100,
+.rotate-0:checked ~ .buttons .rotate-90,
+.rotate-90:checked ~ .buttons .rotate-180,
+.rotate-180:checked ~ .buttons .rotate-270,
+.rotate-270:checked ~ .buttons .rotate-0 {
+    z-index: 1;
+}
+
+.scale-120:checked ~ .cat-image-wrapper .image-scale {
+    transform: scale(1.2);
+}
+
+.scale-140:checked ~ .cat-image-wrapper .image-scale {
+    transform: scale(1.4);
+}
+
+.scale-160:checked ~ .cat-image-wrapper .image-scale {
+    transform: scale(1.6);
+}
+
+.scale-180:checked ~ .cat-image-wrapper .image-scale {
+    transform: scale(1.8);
+}
+
+.scale_200:checked ~ .cat-image-wrapper .image-scale {
+    transform: scale(2.0);
+}
+
+.original-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+}
+
+.logo:checked ~ .cat-image-wrapper .image-rotate {
+    display: none;
+}
+
+.logo:checked ~ .cat-image-wrapper .image-rotate {
+    display: none;
+}
+
+.logo:checked ~ .buttons .logo {
+    filter: opacity(0.6);
+}
+
+.logo:checked ~ .cat-image-wrapper .original-image {
+    display: block;
+}
+
+.rotate-90:checked ~ .cat-image-wrapper .image-rotate {
+    transform: rotate(-90deg);
+}
+
+.rotate-180:checked ~ .cat-image-wrapper .image-rotate {
+    transform: rotate(-180deg);
+}
+
+.rotate-270:checked ~ .cat-image-wrapper .image-rotate {
+    transform: rotate(-270deg);
+}
+
+.flip:checked ~ .cat-image-wrapper .image-flip {
+    transform: scale(-1, 1);
+}
+
+.filter_clear-image:checked ~ .filters .clear-image,
+.filter_peter:checked ~ .filters .peter,
+.filter_yalta:checked ~ .filters .yalta,
+.filter_ural:checked ~ .filters .ural,
+.filter_egypt:checked ~ .filters .egypt,
+.filter_nightmare:checked ~ .filters .nightmare {
+    font-weight: 600;
+}
+
+.filter_peter:checked ~ .cat-image-wrapper .cat-image {
+    filter: grayscale(20);
+}
+
+.filter_yalta:checked ~ .cat-image-wrapper .cat-image {
+    filter: sepia(50);
+}
+
+.filter_ural:checked ~ .cat-image-wrapper .cat-image {
+    filter: hue-rotate(160deg);
+}
+
+.filter_egypt:checked ~ .cat-image-wrapper .cat-image {
+    filter: saturate(300%);
+}
+
+.filter_nightmare:checked ~ .cat-image-wrapper .cat-image {
+    filter: invert(1) sepia(50) hue-rotate(-35deg);
+}
+
+.shift-0:checked ~ .arrows-states .arrows_first-state,
+.shift-1:checked ~ .arrows-states .arrows_second-state,
+.shift-2:checked ~ .arrows-states .arrows_third-state {
+    z-index: 1;
+}
+
+.shift-1:checked ~ .filters .filters_wrapper {
+    transform: translateX(-175px);
+}
+
+.shift-2:checked ~ .filters .filters_wrapper {
+    transform: translateX(-350px);
+}
